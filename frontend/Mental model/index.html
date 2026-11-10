@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health Score</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">Student wellbeing</p>
+      <h1>Mental health score predictor</h1>
+      <p class="intro-copy">
+        Enter the student details below to estimate a mental health score using the trained model.
+      </p>
+      <div class="intro-meta">
+        <span><i></i> Private local prediction</span>
+        <span><i></i> Takes less than a minute</span>
+      </div>
+    </section>
+
+    <form id="prediction-form" class="card">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">Student profile</p>
+          <h2>Tell us about the student</h2>
+        </div>
+        <span class="step-badge">12 fields</span>
+      </div>
+      <section class="form-section">
+        <div class="section-title">
+          <span class="section-icon">01</span>
+          <div>
+            <p class="section-kicker">About the student</p>
+            <h3>Personal profile</h3>
+          </div>
+        </div>
+        <div class="form-grid">
+        <label>
+          Age
+          <input name="Age" type="number" min="10" max="100" value="21" required>
+        </label>
+
+        <label>
+          Gender
+          <select name="Gender" required>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>
+          Country
+          <input name="Country" type="text" value="India" required>
+        </label>
+
+        <label>
+          Academic level
+          <select name="Academic_Level" required>
+            <option>High School</option>
+            <option selected>Undergraduate</option>
+            <option>Graduate</option>
+          </select>
+        </label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title">
+          <span class="section-icon">02</span>
+          <div>
+            <p class="section-kicker">Digital habits</p>
+            <h3>Social media activity</h3>
+          </div>
+        </div>
+        <div class="form-grid">
+        <label>
+          Most used platform
+          <select name="Most_Used_Platform" required>
+            <option>Facebook</option>
+            <option>LinkedIn</option>
+            <option selected>Instagram</option>
+            <option>Snapchat</option>
+            <option>Twitter</option>
+            <option>YouTube</option>
+            <option>TikTok</option>
+            <option>LINE</option>
+            <option>KakaoTalk</option>
+            <option>VKontakte</option>
+            <option>WhatsApp</option>
+            <option>WeChat</option>
+          </select>
+        </label>
+
+        <label>
+          Purpose of use
+          <select name="Purpose_Of_Use" required>
+            <option>Networking</option>
+            <option>Education</option>
+            <option selected>Entertainment</option>
+            <option>News</option>
+          </select>
+        </label>
+
+        <label>
+          Daily usage (hours)
+          <input name="Avg_Daily_Usage_Hours" type="number" min="0" max="24" step="0.1" value="4.6" required>
+        </label>
+
+        <label>
+          Daily unlocks
+          <input name="Daily_Unlocks" type="number" min="0" value="166" required>
+        </label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-title">
+          <span class="section-icon">03</span>
+          <div>
+            <p class="section-kicker">Daily routine</p>
+            <h3>Wellbeing indicators</h3>
+          </div>
+        </div>
+        <div class="form-grid">
+        <label>
+          Study hours
+          <input name="Study_Hours" type="number" min="0" max="24" step="0.1" value="4" required>
+        </label>
+
+        <label>
+          Physical activity (hours)
+          <input name="Physical_Activity_Hours" type="number" min="0" max="24" step="0.1" value="1.8" required>
+        </label>
+
+        <label>
+          Sleep per night (hours)
+          <input name="Sleep_Hours_Per_Night" type="number" min="0" max="24" step="0.1" value="6.7" required>
+        </label>
+
+        <label>
+          Stress level
+          <select name="Stress_Level" required>
+            <option>Low</option>
+            <option selected>Medium</option>
+            <option>High</option>
+            <option>Very High</option>
+          </select>
+        </label>
+        </div>
+      </section>
+
+      <button id="submit-button" type="submit">Calculate score</button>
+      <p id="status" class="status" role="status"></p>
+
+      <section id="result" class="result" hidden>
+        <span>Predicted mental health score</span>
+        <strong id="score"></strong>
+      </section>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
