@@ -5,6 +5,7 @@ import joblib
 from fastapi import FastAPI
 from pydantic import BaseModel,Field
 import pandas as pd
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
@@ -17,6 +18,13 @@ model = joblib.load(model_path)
 
 
 app=FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
