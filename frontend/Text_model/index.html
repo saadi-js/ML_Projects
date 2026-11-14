@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10172b">
+    <title>PulseSense | Emotion intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <main class="shell">
+        <nav class="nav">
+            <a class="brand" href="/" aria-label="PulseSense home">
+                <span class="brand-mark"><span></span><span></span><span></span></span>
+                <span>Pulse<span>Sense</span></span>
+            </a>
+            <div class="nav-actions">
+                <span class="status"><i></i> Model online</span>
+                <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle light mode">☼</button>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="eyebrow"><span class="spark">✦</span> TEXT EMOTION INTELLIGENCE</div>
+            <h1>Read the feeling<br><em>between the lines.</em></h1>
+            <p class="hero-copy">Give your words a moment. Our neural model finds the emotional signal hiding in your text.</p>
+        </section>
+
+        <section class="workspace">
+            <div class="composer panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-label">YOUR MESSAGE</span>
+                        <h2>What’s on your mind?</h2>
+                    </div>
+                    <span class="counter"><b id="char-count">0</b> / 2000</span>
+                </div>
+                <textarea id="message" maxlength="2000" placeholder="Write something honest..." aria-label="Text to analyze"></textarea>
+                <div class="composer-footer">
+                    <div class="examples">
+                        <span>Try one:</span>
+                        <button type="button" class="prompt-chip">I am furious!</button>
+                        <button type="button" class="prompt-chip">Today feels wonderful.</button>
+                        <button type="button" class="prompt-chip">I miss them so much.</button>
+                    </div>
+                    <button class="analyze-button" id="analyze-button" type="button">
+                        <span class="button-label">Analyze feeling</span>
+                        <span class="button-arrow">↗</span>
+                    </button>
+                </div>
+                <p class="error-message" id="error-message" role="alert"></p>
+            </div>
+
+            <div class="result panel" id="result-panel">
+                <div class="result-empty" id="empty-state">
+                    <div class="orb orb-empty"><span>✦</span></div>
+                    <h2>Your result will appear here</h2>
+                    <p>Send a message and let’s see what it’s saying.</p>
+                </div>
+                <div class="result-content hidden" id="result-content">
+                    <div class="result-topline">
+                        <span class="section-label">EMOTIONAL SIGNAL</span>
+                        <span class="result-time" id="result-time"></span>
+                    </div>
+                    <div class="emotion-summary">
+                        <div class="orb" id="emotion-orb"><span id="emotion-emoji">✦</span></div>
+                        <div>
+                            <p class="detected-label">Detected emotion</p>
+                            <h2 id="emotion-name">—</h2>
+                            <p class="confidence-copy"><strong id="confidence">0%</strong> confidence</p>
+                        </div>
+                    </div>
+                    <div class="confidence-track"><span id="confidence-fill"></span></div>
+                    <div class="breakdown-heading">
+                        <span>Signal breakdown</span>
+                        <span>Probability</span>
+                    </div>
+                    <div class="probabilities" id="probabilities"></div>
+                </div>
+                <div class="loading-state hidden" id="loading-state">
+                    <div class="loading-orb"><span></span></div>
+                    <h2>Reading your words<span class="dots">...</span></h2>
+                    <p>Finding the emotional signal</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section hidden" id="history-section">
+            <div class="section-heading">
+                <div><span class="section-label">RECENT READS</span><h2>Your emotional trail</h2></div>
+                <button class="clear-button" id="clear-history" type="button">Clear all</button>
+            </div>
+            <div class="history" id="history"></div>
+        </section>
+
+        <footer><span>PulseSense</span> · Your words, understood.</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
