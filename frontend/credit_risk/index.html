@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <title>CreditLens | Risk Assessment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">C</span>
+      <span>Credit<span>Lens</span></span>
+    </a>
+    <div class="status-pill"><span class="status-dot"></span> Model online</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI-powered underwriting</p>
+        <h1>Make confident<br><em>credit decisions.</em></h1>
+        <p class="hero-copy">Enter an applicant's details to receive a clear, instant risk assessment powered by your trained credit model.</p>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit-ring ring-one"></div>
+        <div class="orbit-ring ring-two"></div>
+        <div class="orbit-core"><span>AI</span><small>SCORING</small></div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <form id="risk-form" class="card form-card">
+        <div class="card-heading">
+          <div>
+            <p class="section-label">Application profile</p>
+            <h2>Applicant details</h2>
+          </div>
+          <span class="step-badge">01 / 01</span>
+        </div>
+
+        <div class="form-grid">
+          <label>Age <input name="person_age" type="number" min="18" max="100" value="28" required></label>
+          <label>Annual income <div class="input-prefix"><span>$</span><input name="person_income" type="number" min="0" value="65000" required></div></label>
+          <label>Employment length <div class="input-suffix"><input name="person_emp_length" type="number" min="0" step="0.1" value="5" required><span>years</span></div></label>
+          <label>Home ownership
+            <select name="person_home_ownership" required>
+              <option value="RENT">Rent</option><option value="OWN">Own</option><option value="MORTGAGE">Mortgage</option><option value="OTHER">Other</option>
+            </select>
+          </label>
+          <label>Loan amount <div class="input-prefix"><span>$</span><input name="loan_amnt" type="number" min="0" value="10000" required></div></label>
+          <label>Interest rate <div class="input-suffix"><input name="loan_int_rate" type="number" min="0" step="0.01" value="12.5" required><span>%</span></div></label>
+          <label>Loan intent
+            <select name="loan_intent" required>
+              <option value="PERSONAL">Personal</option><option value="EDUCATION">Education</option><option value="MEDICAL">Medical</option><option value="VENTURE">Venture</option><option value="HOMEIMPROVEMENT">Home improvement</option><option value="DEBTCONSOLIDATION">Debt consolidation</option>
+            </select>
+          </label>
+          <label>Loan grade
+            <select name="loan_grade" required>
+              <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option>
+            </select>
+          </label>
+          <label>Income proportion <div class="input-suffix"><input name="loan_percent_income" type="number" min="0" max="1" step="0.01" value="0.15" required><span>ratio</span></div></label>
+          <label>Credit history <div class="input-suffix"><input name="cb_person_cred_hist_length" type="number" min="0" value="5" required><span>years</span></div></label>
+          <label>Previous default
+            <select name="cb_person_default_on_file" required><option value="N">No</option><option value="Y">Yes</option></select>
+          </label>
+        </div>
+
+        <button class="submit-button" type="submit"><span class="button-label">Assess application</span><span class="button-arrow">-&gt;</span></button>
+        <p class="form-note"><span class="lock-icon">&#9670;</span> Your information is processed securely and never stored.</p>
+      </form>
+
+      <aside id="result-panel" class="card result-card">
+        <div class="result-placeholder">
+          <div class="placeholder-icon">+</div>
+          <p class="section-label">Awaiting assessment</p>
+          <h2>Your result will appear here</h2>
+          <p>Complete the application profile and select <strong>Assess application</strong> to generate a risk score.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer><span>CreditLens</span> &copy; 2026 &middot; Decision support, not financial advice</footer>
+  <script src="/script.js"></script>
+</body>
+</html>
